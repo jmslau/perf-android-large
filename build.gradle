@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0-beta3'
+        classpath 'com.android.tools.build:gradle:2.3.0-rc1'
         classpath ('com.uber:okbuck:0.16.3') {
           exclude module: 'gradle'
         }
@@ -50,14 +50,18 @@ subprojects { project ->
             if (it.name.contains("Test")) {
                 resolutionStrategy {
                     force 'io.reactivex:rxandroid:1.2.1'
-                    force 'com.android.support:appcompat-v7:24.2.1'
-                    force 'com.android.support:recyclerview-v7:24.2.1'
-                    force 'com.android.support:animated-vector-drawable:24.2.1'
-                    force 'com.android.support:support-v4:24.2.1'
+                    force 'com.squareup.okio:okio:1.8.0'
+                    force 'io.reactivex:rxjava:1.1.8'
+                    force 'com.google.auto:auto-common:0.6'
+                    force 'com.android.support:appcompat-v7:25.1.0'
+                    force 'com.android.support:recyclerview-v7:25.1.0'
+                    force 'com.android.support:animated-vector-drawable:25.1.0'
+                    force 'com.android.support:support-v4:25.1.0'
                 }
             }
             resolutionStrategy {
                 force 'com.google.guava:guava:19.0'
+                force 'com.google.auto:auto-common:0.6'
             }
         }
 

@@ -1,7 +1,7 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
-    compile deps.external.rxjava
-    compile deps.external.rxrelay
-    compile deps.support.annotations
-    compile deps.other.crittercism
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.support.annotations
+    api deps.other.crittercism
 }

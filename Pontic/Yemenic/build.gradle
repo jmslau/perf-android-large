@@ -1,4 +1,4 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
-    compile deps.support.annotations
+    api deps.support.annotations
 }

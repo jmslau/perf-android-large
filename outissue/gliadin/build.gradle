@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.other.javautil
-    compile deps.other.autovalue
+    api deps.other.javautil
+    api deps.other.autovalue
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':Padraig:ratafee')
-    compile project(':outissue:nutate')
-    compile project(':outissue:extended')
-    compile deps.external.timber
+    api project(':Padraig:ratafee')
+    api project(':outissue:nutate')
+    api project(':outissue:extended')
+    api deps.external.timber
 
-    testCompile project(':outissue:browntail')
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
-    testCompile project(':outissue:caricetum:scientist')
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:caricetum:scientist')
 }

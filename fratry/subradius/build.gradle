@@ -1,22 +1,22 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:nutate')
-    compile project(':outissue:tristate')
-    compile project(':fratry:matchy')
+    api project(':outissue:nutate')
+    api project(':outissue:tristate')
+    api project(':fratry:matchy')
 
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.other.appcompat
 
-    compile deps.apt.javaxInject
-    compile deps.support.annotations
-    compile deps.other.rxlifecycle
-    compile deps.other.rxrelay
-    compile deps.other.javaxInject
-    compile deps.other.raveCompiler
-    compile deps.other.utils
-    compile deps.other.design
-    compile deps.other.crittercism
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.other.rxlifecycle
+    api deps.other.rxrelay
+    api deps.other.javaxInject
+    api deps.other.raveCompiler
+    api deps.other.utils
+    api deps.other.design
+    api deps.other.crittercism
 
-    testCompile project(':outissue:browntail')
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
 }

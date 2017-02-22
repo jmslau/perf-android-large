@@ -1,6 +1,6 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
-    compile deps.other.crittercism
+    api deps.other.crittercism
     compileOnly deps.apt.autoValue
     compileOnly deps.apt.autoValueAnnotations
 }

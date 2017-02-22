@@ -3,11 +3,11 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:skiapod')
-    compile project(':fratry:subradius')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:skiapod')
+    api project(':fratry:subradius')
 
-    compile deps.other.geo
+    api deps.other.geo
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

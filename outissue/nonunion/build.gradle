@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:extended')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:caricetum:skiapod')
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:caricetum:skiapod')
 }

@@ -1,12 +1,12 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
-    compile project(':outissue:caricetum:claypan')
+    api project(':outissue:caricetum:claypan')
 
     compileOnly deps.support.annotations
     compileOnly deps.apt.autoService
     compileOnly deps.apt.androidApi
 
-    testCompile deps.support.annotations
-    testCompile deps.test.compileTesting
-    testCompile deps.other.leanback
+    testImplementation deps.support.annotations
+    testImplementation deps.test.compileTesting
+    testImplementation deps.other.leanback
 }

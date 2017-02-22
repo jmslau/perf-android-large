@@ -5,19 +5,19 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile deps.apt.javaxInject
-    compile deps.external.dagger
-    compile deps.external.picasso
-    compile deps.external.timber
-    compile deps.other.rebound
-    compile deps.support.annotations
-    compile deps.other.appcompat
-    compile deps.other.geo
-    compile deps.other.googleMap
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:aricine')
-    compile project(':outissue:carnally')
+    api deps.apt.javaxInject
+    api deps.external.dagger
+    api deps.external.picasso
+    api deps.external.timber
+    api deps.other.rebound
+    api deps.support.annotations
+    api deps.other.appcompat
+    api deps.other.geo
+    api deps.other.googleMap
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:carnally')
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:synarchy')
-    compile project(':Padraig:follicle')
+    api project(':outissue:synarchy')
+    api project(':Padraig:follicle')
 
-    compile deps.debug.leakCanary
-    compile deps.debug.haha
-    compile deps.other.crittercism
-    compile deps.debug.stetho
-    compile deps.debug.stethoOkHttp
-    compile deps.debug.stethoTimber
+    api deps.debug.leakCanary
+    api deps.debug.haha
+    api deps.other.crittercism
+    api deps.debug.stetho
+    api deps.debug.stethoOkHttp
+    api deps.debug.stethoTimber
 }

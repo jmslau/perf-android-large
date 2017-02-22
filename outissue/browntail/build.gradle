@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 dependencies {
 
-    compile project(':outissue:proctoral')
-    compile project(':outissue:nutate')
+    api project(':outissue:proctoral')
+    api project(':outissue:nutate')
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

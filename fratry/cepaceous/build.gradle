@@ -6,22 +6,22 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile project(':outissue:tetragram')
-    compile project(':outissue:extended')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:carnally')
-    compile project(':fratry:halsen')
-    compile project(':fratry:Ormond')
-    compile project(':fratry:subradius')
-    compile project(':fratry:crapple')
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:carnally')
+    api project(':fratry:halsen')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api project(':fratry:crapple')
 
-    compile deps.external.dagger
-    compile deps.other.geo
-    compile deps.other.exo
-    compile deps.other.javaxInject
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.other.exo
+    api deps.other.javaxInject
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

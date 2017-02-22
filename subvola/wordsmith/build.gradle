@@ -5,21 +5,21 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor deps.other.recyclerview
 
-    compile project(':outissue:nutate')
-    compile project(':outissue:extended')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:situla')
-    compile project(':outissue:carnally')
-    compile project(':fratry:Krapina')
-    compile project(':fratry:Ormond')
-    compile project(':fratry:subradius')
-    compile project(':fratry:crapple')
-    compile project(':outissue:tetragram')
-    compile deps.external.dagger
+    api project(':outissue:nutate')
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:situla')
+    api project(':outissue:carnally')
+    api project(':fratry:Krapina')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api project(':fratry:crapple')
+    api project(':outissue:tetragram')
+    api deps.external.dagger
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:browntail')
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

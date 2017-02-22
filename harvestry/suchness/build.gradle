@@ -5,20 +5,20 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile project(':outissue:nonjurant')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:nonparty')
-    compile project(':outissue:aricine')
-    compile project(':outissue:situla')
-    compile project(':outissue:oleometer')
-    compile project(':outissue:carnally')
-    compile deps.support.multidex
-    compile deps.external.gson
-    compile deps.other.utils
-    compile deps.other.location
-    compile deps.other.locationServiceGoogle
+    api project(':outissue:nonjurant')
+    api project(':outissue:stupendly')
+    api project(':outissue:nonparty')
+    api project(':outissue:aricine')
+    api project(':outissue:situla')
+    api project(':outissue:oleometer')
+    api project(':outissue:carnally')
+    api deps.support.multidex
+    api deps.external.gson
+    api deps.other.utils
+    api deps.other.location
+    api deps.other.locationServiceGoogle
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

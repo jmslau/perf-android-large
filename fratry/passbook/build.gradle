@@ -3,25 +3,25 @@ dependencies {
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.other.appcompat
 
-    compile project(':fratry:matchy')
-    compile project(':outissue:tetragram')
-    compile project(':outissue:nonjurant')
-    compile project(':outissue:nutate')
-    compile project(':outissue:oleometer')
-    compile project(':outissue:eyesore')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:situla')
-    compile project(':outissue:aricine')
-    compile project(':outissue:tristate')
-    compile project(':outissue:defusion')
-    compile deps.other.guava
-    compile deps.other.rxlifecycle
-    compile deps.other.autoCommon
-    compile deps.other.autoService
-    compile deps.other.timber
-    provided deps.apt.javax
+    api project(':fratry:matchy')
+    api project(':outissue:tetragram')
+    api project(':outissue:nonjurant')
+    api project(':outissue:nutate')
+    api project(':outissue:oleometer')
+    api project(':outissue:eyesore')
+    api project(':outissue:stupendly')
+    api project(':outissue:situla')
+    api project(':outissue:aricine')
+    api project(':outissue:tristate')
+    api project(':outissue:defusion')
+    api deps.other.guava
+    api deps.other.rxlifecycle
+    api deps.other.autoCommon
+    api deps.other.autoService
+    api deps.other.timber
+    compileOnly deps.apt.javax
 
-    testCompile deps.test.opentracing
-    testCompile project(':outissue:browntail')
-    testCompile project(':outissue:cyclus')
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
 }

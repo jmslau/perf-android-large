@@ -1,4 +1,4 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':Padraig:follicle')
+    api project(':Padraig:follicle')
 }

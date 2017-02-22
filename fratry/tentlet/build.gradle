@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project (':outissue:nonjurant')
+    api project (':outissue:nonjurant')
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

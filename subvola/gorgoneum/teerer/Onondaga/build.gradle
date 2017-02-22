@@ -5,17 +5,17 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor deps.other.recyclerview
 
-    compile project(':outissue:tetragram')
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:tristate')
-    compile project(':outissue:carnally')
-    compile project(':fratry:sodden')
-    compile project(':fratry:subradius')
-    compile deps.external.dagger
-    compile deps.other.geo
-    compile deps.support.design
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:tristate')
+    api project(':outissue:carnally')
+    api project(':fratry:sodden')
+    api project(':fratry:subradius')
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.support.design
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

@@ -1,15 +1,15 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.external.rxjava
-    compile deps.external.rxrelay
-    compile deps.external.timber
-    compile deps.external.gson
-    compile deps.external.dagger
-    compile deps.support.annotations
-    compile deps.other.utils
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.external.timber
+    api deps.external.gson
+    api deps.external.dagger
+    api deps.support.annotations
+    api deps.other.utils
 
-    compile project(':outissue:nutate')
+    api project(':outissue:nutate')
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:browntail')
 }

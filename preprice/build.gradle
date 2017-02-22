@@ -6,48 +6,48 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile project(':outissue:tetragram')
-    compile project(':outissue:bracciale')
-    compile project(':outissue:oleometer')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:caricetum:skiapod')
-    compile project(':outissue:tristate')
-    compile project(':outissue:defusion')
-    compile project(':outissue:carnally')
+    api project(':outissue:tetragram')
+    api project(':outissue:bracciale')
+    api project(':outissue:oleometer')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:caricetum:skiapod')
+    api project(':outissue:tristate')
+    api project(':outissue:defusion')
+    api project(':outissue:carnally')
 
-    compile project(':fratry:asteep')
-    compile project(':fratry:psoriasis')
-    compile project(':fratry:passbook')
-    compile project(':fratry:crippling')
+    api project(':fratry:asteep')
+    api project(':fratry:psoriasis')
+    api project(':fratry:passbook')
+    api project(':fratry:crippling')
 
-    compile deps.debug.stethoOkHttp
-    compile deps.external.dagger
-    compile deps.support.multidex
-    compile deps.external.gson
-    compile deps.other.geo
-    compile deps.support.multidex
-    compile deps.other.exo
-    compile deps.other.mvp
-    compile deps.other.utils
-    compile deps.other.calligraphy
-    compile deps.other.guava
-    compile deps.other.picasso
-    compile deps.other.timber
-    compile deps.other.rxlifecycle
-    compile deps.other.javax
-    compile deps.other.javaxInject
-    compile deps.other.javapoet
-    compile deps.other.crittercism
-    compile deps.other.location
-    compile deps.other.locationServiceGoogle
+    api deps.debug.stethoOkHttp
+    api deps.external.dagger
+    api deps.support.multidex
+    api deps.external.gson
+    api deps.other.geo
+    api deps.support.multidex
+    api deps.other.exo
+    api deps.other.mvp
+    api deps.other.utils
+    api deps.other.calligraphy
+    api deps.other.guava
+    api deps.other.picasso
+    api deps.other.timber
+    api deps.other.rxlifecycle
+    api deps.other.javax
+    api deps.other.javaxInject
+    api deps.other.javapoet
+    api deps.other.crittercism
+    api deps.other.location
+    api deps.other.locationServiceGoogle
 
-    debugCompile deps.debug.stetho
+    debugImplementation deps.debug.stetho
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:browntail')
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
-    testCompile project(':outissue:caricetum:scientist')
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:caricetum:scientist')
 }

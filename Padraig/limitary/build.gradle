@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:proctoral')
-    compile deps.support.annotations
-    compile project(':outissue:oleometer')
-    compile deps.other.autoValueGson
+    api project(':outissue:proctoral')
+    api deps.support.annotations
+    api project(':outissue:oleometer')
+    api deps.other.autoValueGson
 }

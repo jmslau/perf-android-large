@@ -2,19 +2,19 @@ apply plugin: 'com.android.library'
 dependencies {
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.apt.daggerCompiler
-    compile deps.external.dagger
-    compile deps.other.rxlifecycle
-    compile deps.other.locationServiceGoogle
-    compile project(':outissue:tetragram')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:tristate')
-    compile project(':outissue:carnally')
-    compile project(':fratry:savory')
-    compile project(':fratry:Ormond')
-    compile project(':fratry:matchy')
-    compile project(':fratry:subradius')
-    compile project(':fratry:crapple')
-    compile project(':outissue:edictally')
+    api deps.external.dagger
+    api deps.other.rxlifecycle
+    api deps.other.locationServiceGoogle
+    api project(':outissue:tetragram')
+    api project(':outissue:stupendly')
+    api project(':outissue:tristate')
+    api project(':outissue:carnally')
+    api project(':fratry:savory')
+    api project(':fratry:Ormond')
+    api project(':fratry:matchy')
+    api project(':fratry:subradius')
+    api project(':fratry:crapple')
+    api project(':outissue:edictally')
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

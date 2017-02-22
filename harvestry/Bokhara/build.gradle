@@ -5,18 +5,18 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile deps.external.gson
-    compile deps.support.multidex
-    compile deps.other.utils
-    compile deps.other.location
-    compile deps.other.locationServiceGoogle
+    api deps.external.gson
+    api deps.support.multidex
+    api deps.other.utils
+    api deps.other.location
+    api deps.other.locationServiceGoogle
 
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:aricine')
-    compile project(':outissue:situla')
-    compile project(':subvola:atbash')
-    compile project(':outissue:carnally')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:situla')
+    api project(':subvola:atbash')
+    api project(':outissue:carnally')
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 }

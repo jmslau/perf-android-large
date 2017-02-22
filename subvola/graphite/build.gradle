@@ -5,12 +5,12 @@ dependencies {
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:carnally')
-    compile project(':fratry:halsen')
-    compile deps.support.design
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:carnally')
+    api project(':fratry:halsen')
+    api deps.support.design
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

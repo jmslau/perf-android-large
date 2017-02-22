@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
 dependencies {
-    releaseCompile project(':Padraig:cuminoin')
-    debugCompile project(':Padraig:arbitrate')
+    releaseImplementation project(':Padraig:cuminoin')
+    debugImplementation project(':Padraig:arbitrate')
 }

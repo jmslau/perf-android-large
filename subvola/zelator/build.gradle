@@ -5,20 +5,20 @@ dependencies {
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':subvola:doored')
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:concher')
-    compile project(':outissue:caricetum:skiapod')
-    compile project(':outissue:Glumaceae')
-    compile project(':outissue:carnally')
-    compile project(':outissue:tetragram')
-    compile deps.external.dagger
-    compile deps.support.design
+    api project(':subvola:doored')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:concher')
+    api project(':outissue:caricetum:skiapod')
+    api project(':outissue:Glumaceae')
+    api project(':outissue:carnally')
+    api project(':outissue:tetragram')
+    api deps.external.dagger
+    api deps.support.design
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
-    testCompile project(':outissue:caricetum:scientist')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:caricetum:scientist')
 }

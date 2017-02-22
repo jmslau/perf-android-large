@@ -1,6 +1,6 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
-    compile deps.other.leanback
-    compile deps.other.rebound
-    compile deps.support.annotations
+    api deps.other.leanback
+    api deps.other.rebound
+    api deps.support.annotations
 }

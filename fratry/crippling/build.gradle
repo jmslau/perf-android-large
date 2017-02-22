@@ -3,20 +3,20 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
-    compile project(':outissue:tetragram')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:phasmatid')
-    compile project(':outissue:tristate')
-    compile deps.other.geo
-    compile deps.external.dagger
-    compile deps.other.utils
-    compile deps.other.dagger
-    provided deps.other.roasterJdt
-    compile deps.other.rxandroid
-    provided deps.apt.javax
+    api project(':outissue:tetragram')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:phasmatid')
+    api project(':outissue:tristate')
+    api deps.other.geo
+    api deps.external.dagger
+    api deps.other.utils
+    api deps.other.dagger
+    compileOnly deps.other.roasterJdt
+    api deps.other.rxandroid
+    compileOnly deps.apt.javax
 
-    testCompile deps.other.leanback
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

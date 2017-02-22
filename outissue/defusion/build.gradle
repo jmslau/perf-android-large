@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:ergamine')
-    compile deps.external.rxandroid
-    compile deps.other.geo
-    compile deps.other.cast
+    api project(':outissue:ergamine')
+    api deps.external.rxandroid
+    api deps.other.geo
+    api deps.other.cast
 }

@@ -4,21 +4,21 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:Chelura')
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:skiapod')
-    compile project(':outissue:coherence')
-    compile project(':outissue:tetragram')
-    compile project(':Padraig:emerse')
-    compile project(':fratry:Ormond')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:skiapod')
+    api project(':outissue:coherence')
+    api project(':outissue:tetragram')
+    api project(':Padraig:emerse')
+    api project(':fratry:Ormond')
 
-    compile deps.external.dagger
+    api deps.external.dagger
     compile(deps.external.jose4j) {
         exclude module: 'slf4j-api'
     }
-    compile deps.external.slf4jApi
-    compile deps.other.exo
+    api deps.external.slf4jApi
+    api deps.other.exo
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

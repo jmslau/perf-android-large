@@ -3,21 +3,21 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
-    compile deps.external.dagger
-    compile deps.external.gson
-    compile deps.support.annotations
-    compile deps.other.dagger
-    compile deps.other.autoCommon
-    compile deps.apt.javaxInject
-    compile deps.external.picasso
-    compile deps.other.crittercism
-    compile project(':outissue:carnally')
-    compile project(':outissue:extended')
-    compile project(':outissue:gliadin')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:aricine')
-    compile project(':fratry:Ormond')
-    compile project(':fratry:crippling')
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    api deps.external.dagger
+    api deps.external.gson
+    api deps.support.annotations
+    api deps.other.dagger
+    api deps.other.autoCommon
+    api deps.apt.javaxInject
+    api deps.external.picasso
+    api deps.other.crittercism
+    api project(':outissue:carnally')
+    api project(':outissue:extended')
+    api project(':outissue:gliadin')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':fratry:Ormond')
+    api project(':fratry:crippling')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

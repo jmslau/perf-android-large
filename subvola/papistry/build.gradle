@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:extended')
-    compile project(':outissue:carnally')
-    compile deps.other.location
-    compile deps.other.locationServiceGoogle
-    compile deps.other.rebound
+    api project(':outissue:extended')
+    api project(':outissue:carnally')
+    api deps.other.location
+    api deps.other.locationServiceGoogle
+    api deps.other.rebound
 
-    compile deps.other.javapoet
+    api deps.other.javapoet
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

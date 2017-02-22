@@ -1,4 +1,4 @@
 apply plugin: 'com.android.application'
 dependencies {
-    compile project(':subvola:gorgoneum:teerer:revalenta')
+    api project(':subvola:gorgoneum:teerer:revalenta')
 }

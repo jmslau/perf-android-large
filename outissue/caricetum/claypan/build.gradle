@@ -1,17 +1,17 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
 
-    compile deps.apt.autoCommon
-    compile deps.external.dagger
-    compile deps.apt.javapoet
-    compile deps.other.geo
+    api deps.apt.autoCommon
+    api deps.external.dagger
+    api deps.apt.javapoet
+    api deps.other.geo
 
-    compile project (':outissue:caricetum:concher')
+    api project (':outissue:caricetum:concher')
 
     compileOnly deps.support.annotations
     compileOnly deps.apt.autoService
     compileOnly deps.apt.androidApi
 
-    testCompile deps.test.compileTesting
-    testCompile deps.other.leanback
+    testImplementation deps.test.compileTesting
+    testImplementation deps.other.leanback
 }

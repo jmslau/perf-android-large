@@ -6,28 +6,28 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile project(':subvola:remigrate')
-    compile project(':subvola:gorgoneum:Chordata')
-    compile project(':outissue:tetragram')
-    compile project(':outissue:extended')
-    compile project(':outissue:oleometer')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:situla')
-    compile project(':outissue:carnally')
-    compile project(':fratry:sodden')
-    compile project(':fratry:Ormond')
-    compile project(':fratry:subradius')
-    compile project(':fratry:crapple')
-    compile deps.other.geo
-    compile deps.external.dagger
-    compile deps.other.geo
-    compile deps.other.exo
-    compile deps.other.appcompat
+    api project(':subvola:remigrate')
+    api project(':subvola:gorgoneum:Chordata')
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:oleometer')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:situla')
+    api project(':outissue:carnally')
+    api project(':fratry:sodden')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api project(':fratry:crapple')
+    api deps.other.geo
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.other.exo
+    api deps.other.appcompat
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile deps.test.opentracing
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:browntail')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

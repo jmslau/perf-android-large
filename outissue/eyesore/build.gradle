@@ -2,17 +2,17 @@ apply plugin: 'com.android.library'
 dependencies {
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':outissue:extended')
+    api project(':outissue:extended')
 
-    compile project(':fratry:asteep')
-    compile project(':fratry:Ormond')
+    api project(':fratry:asteep')
+    api project(':fratry:Ormond')
 
-    compile deps.apt.javaxInject
-    compile deps.support.annotations
-    compile deps.other.utils
-    compile deps.other.rxlifecycle
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.other.utils
+    api deps.other.rxlifecycle
 
-    compile deps.external.dagger
+    api deps.external.dagger
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

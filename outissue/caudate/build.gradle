@@ -2,23 +2,23 @@ apply plugin: 'com.android.library'
 dependencies {
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':Padraig:ratafee')
+    api project(':Padraig:ratafee')
 
-    compile project (':outissue:proctoral')
-    compile project (':outissue:nutate')
-    compile project(':outissue:aricine')
-    compile project(':outissue:extended')
+    api project (':outissue:proctoral')
+    api project (':outissue:nutate')
+    api project(':outissue:aricine')
+    api project(':outissue:extended')
 
-    compile deps.support.annotations
-    compile deps.external.dagger
-    compile deps.external.timber
-    compile deps.other.autoValueGson
+    api deps.support.annotations
+    api deps.external.dagger
+    api deps.external.timber
+    api deps.other.autoValueGson
 
-    compile deps.other.gson
+    api deps.other.gson
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:browntail')
-    testCompile deps.other.reactivenet
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:browntail')
+    testImplementation deps.other.reactivenet
 }

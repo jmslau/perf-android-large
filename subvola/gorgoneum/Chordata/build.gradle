@@ -5,23 +5,23 @@ dependencies {
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':outissue:tetragram')
-    compile project(':outissue:proctoral')
-    compile project(':outissue:coherence')
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:airified')
-    compile project(':outissue:caricetum:skiapod')
-    compile project(':fratry:crankum')
-    compile project(':fratry:sodden')
-    compile project(':fratry:crapple')
+    api project(':outissue:tetragram')
+    api project(':outissue:proctoral')
+    api project(':outissue:coherence')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:airified')
+    api project(':outissue:caricetum:skiapod')
+    api project(':fratry:crankum')
+    api project(':fratry:sodden')
+    api project(':fratry:crapple')
 
-    compile deps.support.design
-    compile deps.external.braintree
-    compile deps.other.reflections
+    api deps.support.design
+    api deps.external.braintree
+    api deps.other.reflections
 
-    testCompile deps.test.opentracing
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
-    testCompile project(':outissue:caricetum:scientist')
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:caricetum:scientist')
 }

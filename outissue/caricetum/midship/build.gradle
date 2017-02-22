@@ -1,22 +1,22 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:caricetum:concher')
-    compile project(':outissue:carnally')
+    api project(':outissue:caricetum:concher')
+    api project(':outissue:carnally')
 
-    compile deps.other.retrofit
-    compile deps.other.utils
-    compile deps.external.rxrelay
-    compile deps.external.rxbinding
-    compile deps.external.rxlifecycle
-    compile deps.external.rxandroid
-    compile deps.external.rxjava
-    compile deps.external.timber
-    compile deps.apt.javaxInject
-    compile deps.support.annotations
-    compile deps.support.appCompat
+    api deps.other.retrofit
+    api deps.other.utils
+    api deps.external.rxrelay
+    api deps.external.rxbinding
+    api deps.external.rxlifecycle
+    api deps.external.rxandroid
+    api deps.external.rxjava
+    api deps.external.timber
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.support.appCompat
 
-    testCompile deps.external.rxlifecycle
-    testCompile deps.support.appCompat
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation deps.external.rxlifecycle
+    testImplementation deps.support.appCompat
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

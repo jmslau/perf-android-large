@@ -5,22 +5,22 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor deps.other.recyclerview
 
-    compile project(':subvola:remigrate')
-    compile project(':subvola:gorgoneum:Chordata')
-    compile project(':subvola:gorgoneum:metanilic:agaric')
-    compile project(':subvola:graphite')
-    compile project(':outissue:tetragram')
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:situla')
-    compile project(':outissue:carnally')
-    compile project(':fratry:savory')
-    compile project(':fratry:halsen')
-    compile deps.support.design
-    compile deps.other.exo
+    api project(':subvola:remigrate')
+    api project(':subvola:gorgoneum:Chordata')
+    api project(':subvola:gorgoneum:metanilic:agaric')
+    api project(':subvola:graphite')
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:situla')
+    api project(':outissue:carnally')
+    api project(':fratry:savory')
+    api project(':fratry:halsen')
+    api deps.support.design
+    api deps.other.exo
 
-    testCompile deps.test.opentracing
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:midship')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:midship')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

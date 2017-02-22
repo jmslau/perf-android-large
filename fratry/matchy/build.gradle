@@ -2,18 +2,18 @@ apply plugin: 'com.android.library'
 dependencies {
     annotationProcessor deps.other.recyclerview
 
-    compile project (':outissue:shortsome')
-    compile project (':outissue:gliadin')
-    compile project (':outissue:aricine')
-    compile project (':outissue:nutate')
-    compile project (':fratry:asteep')
+    api project (':outissue:shortsome')
+    api project (':outissue:gliadin')
+    api project (':outissue:aricine')
+    api project (':outissue:nutate')
+    api project (':fratry:asteep')
 
-    compile deps.external.gson
-    compile deps.external.rxjava
-    compile deps.external.rxrelay
-    compile deps.external.timber
-    compile deps.other.blockcanary
+    api deps.external.gson
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.external.timber
+    api deps.other.blockcanary
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:browntail')
 }

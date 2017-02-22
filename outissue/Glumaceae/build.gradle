@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:carnally')
+    api project(':outissue:carnally')
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

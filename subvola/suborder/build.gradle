@@ -5,26 +5,26 @@ dependencies {
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':subvola:haploidic')
-    compile project(':outissue:tetragram')
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:phasmatid')
-    compile project(':outissue:aricine')
-    compile project(':outissue:carnally')
-    compile project(':subvola:emergency')
-    compile project(':fratry:Ormond')
-    compile project(':fratry:matchy')
-    compile project(':fratry:Krapina')
-    compile deps.external.picasso
-    compile deps.support.cardView
-    compile deps.support.design
-    compile deps.other.geo
-    compile deps.other.blockcanary
+    api project(':subvola:haploidic')
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:phasmatid')
+    api project(':outissue:aricine')
+    api project(':outissue:carnally')
+    api project(':subvola:emergency')
+    api project(':fratry:Ormond')
+    api project(':fratry:matchy')
+    api project(':fratry:Krapina')
+    api deps.external.picasso
+    api deps.support.cardView
+    api deps.support.design
+    api deps.other.geo
+    api deps.other.blockcanary
 
-    testCompile deps.other.leanback
-    testCompile project(':outissue:extended')
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
-    testCompile project(':fratry:Ormond')
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:extended')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':fratry:Ormond')
 }

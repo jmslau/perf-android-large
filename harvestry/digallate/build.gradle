@@ -4,17 +4,17 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:situla')
-    compile project(':outissue:aricine')
-    compile project(':outissue:carnally')
-    compile deps.support.multidex
-    compile deps.external.gson
-    compile deps.other.utils
-    compile deps.other.location
-    compile deps.other.locationServiceGoogle
-    provided deps.apt.javax
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:situla')
+    api project(':outissue:aricine')
+    api project(':outissue:carnally')
+    api deps.support.multidex
+    api deps.external.gson
+    api deps.other.utils
+    api deps.other.location
+    api deps.other.locationServiceGoogle
+    compileOnly deps.apt.javax
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

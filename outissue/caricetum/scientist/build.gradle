@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 dependencies {
-    provided deps.support.annotations
+    compileOnly deps.support.annotations
 
-    compile project(':outissue:cyclus')
-    compile project(':outissue:caricetum:skiapod')
+    api project(':outissue:cyclus')
+    api project(':outissue:caricetum:skiapod')
 }

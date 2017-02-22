@@ -3,14 +3,14 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor project(':outissue:caricetum:handbolt')
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    compile project(':outissue:stupendly')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:aricine')
-    compile project(':outissue:proctoral')
-    compile project(':outissue:airified')
-    compile project(':outissue:carnally')
-    compile deps.support.multidex
-    compile deps.other.crittercism
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:proctoral')
+    api project(':outissue:airified')
+    api project(':outissue:carnally')
+    api deps.support.multidex
+    api deps.other.crittercism
 }

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.other.facebook
-    compile deps.external.rxjava
+    api deps.other.facebook
+    api deps.external.rxjava
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

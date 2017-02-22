@@ -1,7 +1,7 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
     compileOnly deps.support.annotations
 
-    testCompile deps.support.annotations
-    testCompile deps.other.leanback
+    testImplementation deps.support.annotations
+    testImplementation deps.other.leanback
 }

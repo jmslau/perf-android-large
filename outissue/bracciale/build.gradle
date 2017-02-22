@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:tetragram')
-    compile project(':outissue:caricetum:midship')
-    compile deps.external.calligraphy
-    compile deps.support.appCompat
-    compile deps.support.annotations
-    compile deps.other.locationServiceGoogle
+    api project(':outissue:tetragram')
+    api project(':outissue:caricetum:midship')
+    api deps.external.calligraphy
+    api deps.support.appCompat
+    api deps.support.annotations
+    api deps.other.locationServiceGoogle
 }

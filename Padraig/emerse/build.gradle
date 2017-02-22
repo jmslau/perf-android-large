@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.support.annotations
-    compile deps.support.appCompat
-    compile deps.external.rxjava
+    api deps.support.annotations
+    api deps.support.appCompat
+    api deps.external.rxjava
 
-    compile deps.other.crittercism
-    compile deps.other.geo
+    api deps.other.crittercism
+    api deps.other.geo
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

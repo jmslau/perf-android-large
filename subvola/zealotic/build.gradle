@@ -3,20 +3,20 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor project(':outissue:caricetum:handbolt')
 
-    compile project(':outissue:extended')
-    compile project(':outissue:bracciale')
-    compile project(':outissue:oleometer')
-    compile project(':outissue:caricetum:midship')
-    compile project(':outissue:aricine')
-    compile project(':outissue:tristate')
-    compile project(':outissue:carnally')
-    compile project(':fratry:Ormond')
-    compile project(':fratry:subradius')
-    compile deps.external.dagger
-    compile deps.external.rxandroid
-    compile deps.external.timber
-    compile deps.other.raveCompiler
-    compile deps.other.googleMap
+    api project(':outissue:extended')
+    api project(':outissue:bracciale')
+    api project(':outissue:oleometer')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:tristate')
+    api project(':outissue:carnally')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api deps.external.dagger
+    api deps.external.rxandroid
+    api deps.external.timber
+    api deps.other.raveCompiler
+    api deps.other.googleMap
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

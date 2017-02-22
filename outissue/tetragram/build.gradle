@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.support.annotations
+    api deps.support.annotations
 
-    compile deps.other.exo
-    compile deps.other.crittercism
-    compile deps.other.googleMap
+    api deps.other.exo
+    api deps.other.crittercism
+    api deps.other.googleMap
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:carnally')
-    compile project(':outissue:Glumaceae')
-    compile deps.external.rxjava
-    compile deps.other.retrofit
-    testCompile deps.other.leanback
+    api project(':outissue:carnally')
+    api project(':outissue:Glumaceae')
+    api deps.external.rxjava
+    api deps.other.retrofit
+    testImplementation deps.other.leanback
 }

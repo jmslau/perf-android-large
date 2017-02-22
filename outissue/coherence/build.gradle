@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.other.geo
-    compile deps.other.geo
+    api deps.other.geo
+    api deps.other.geo
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

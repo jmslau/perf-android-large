@@ -2,15 +2,15 @@ apply plugin: 'com.android.library'
 dependencies {
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':outissue:extended')
-    compile deps.apt.javaxInject
-    compile deps.support.annotations
-    compile deps.other.rxlifecycle
-    compile deps.other.rxrelay
-    compile deps.other.dagger
-    compile deps.other.autoValueGson
+    api project(':outissue:extended')
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.other.rxlifecycle
+    api deps.other.rxrelay
+    api deps.other.dagger
+    api deps.other.autoValueGson
 
-    compile deps.external.dagger
+    api deps.external.dagger
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

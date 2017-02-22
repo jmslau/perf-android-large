@@ -5,18 +5,18 @@ dependencies {
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
 
-    compile deps.external.dagger
-    compile deps.other.geo
-    compile deps.support.design
-    compile project(':outissue:tetragram')
-    compile project(':outissue:proctoral')
-    compile project(':outissue:coherence')
-    compile project(':outissue:extended')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:carnally')
-    compile project(':fratry:sodden')
-    compile project(':outissue:edictally')
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.support.design
+    api project(':outissue:tetragram')
+    api project(':outissue:proctoral')
+    api project(':outissue:coherence')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:carnally')
+    api project(':fratry:sodden')
+    api project(':outissue:edictally')
 
-    testCompile project(':outissue:cyclus')
-    testCompile project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
 }

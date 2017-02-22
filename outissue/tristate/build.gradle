@@ -1,9 +1,9 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
-    compile deps.external.rxjava
-    compile deps.external.rxrelay
-    compile deps.support.annotations
-    compile deps.other.geo
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.support.annotations
+    api deps.other.geo
 
-    testCompile project(':outissue:unseethed')
+    testImplementation project(':outissue:unseethed')
 }

@@ -1,20 +1,20 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:aricine')
-    compile project(':outissue:nursing')
+    api project(':outissue:aricine')
+    api project(':outissue:nursing')
 
-    compile deps.other.geo
-    compile deps.support.appCompat
-    compile deps.support.design
-    compile deps.support.annotations
-    compile deps.other.firebase
-    compile deps.other.espresso
-    compile deps.other.burst
-    compile deps.other.geo
-    compile deps.other.location
-    compile deps.other.locationServiceGoogle
-    compile deps.external.calligraphy
-    compile deps.external.picasso
+    api deps.other.geo
+    api deps.support.appCompat
+    api deps.support.design
+    api deps.support.annotations
+    api deps.other.firebase
+    api deps.other.espresso
+    api deps.other.burst
+    api deps.other.geo
+    api deps.other.location
+    api deps.other.locationServiceGoogle
+    api deps.external.calligraphy
+    api deps.external.picasso
 
-    testCompile deps.other.leanback
+    testImplementation deps.other.leanback
 }

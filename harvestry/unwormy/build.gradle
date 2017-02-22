@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 dependencies {
-    compile project(':harvestry:Timbira')
-    compile project(':outissue:carnally')
-    debugCompile deps.other.crittercism
+    api project(':harvestry:Timbira')
+    api project(':outissue:carnally')
+    debugImplementation deps.other.crittercism
 }

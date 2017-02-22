@@ -3,8 +3,8 @@ dependencies {
     annotationProcessor deps.other.recyclerview
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project(':outissue:edictally')
-    compile deps.other.crittercism
+    api project(':outissue:edictally')
+    api deps.other.crittercism
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

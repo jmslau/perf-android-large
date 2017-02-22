@@ -4,19 +4,19 @@ dependencies {
     annotationProcessor deps.apt.daggerCompiler
     annotationProcessor project(':outissue:caricetum:handbolt')
     annotationProcessor project(':outissue:caricetum:Chelura')
-    compile project(':subvola:inhumanly')
-    compile project(':Padraig:follicle')
-    compile project(':outissue:stupendly')
-    compile project(':outissue:aricine')
-    compile project(':outissue:situla')
-    compile project(':outissue:carnally')
-    compile deps.support.multidex
-    compile deps.external.gson
-    compile deps.other.utils
-    compile deps.other.location
-    compile deps.other.locationServiceGoogle
-    compile deps.debug.stetho
-    compile deps.debug.stethoOkHttp
-    provided deps.apt.javax
-    testCompile project(':outissue:cyclus')
+    api project(':subvola:inhumanly')
+    api project(':Padraig:follicle')
+    api project(':outissue:stupendly')
+    api project(':outissue:aricine')
+    api project(':outissue:situla')
+    api project(':outissue:carnally')
+    api deps.support.multidex
+    api deps.external.gson
+    api deps.other.utils
+    api deps.other.location
+    api deps.other.locationServiceGoogle
+    api deps.debug.stetho
+    api deps.debug.stethoOkHttp
+    compileOnly deps.apt.javax
+    testImplementation project(':outissue:cyclus')
 }

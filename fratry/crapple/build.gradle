@@ -2,17 +2,17 @@ apply plugin: 'com.android.library'
 dependencies {
     annotationProcessor deps.other.recyclerview
 
-    compile project(':outissue:caricetum:concher')
-    compile project(':fratry:matchy')
-    compile project(':fratry:linotype')
-    compile project(':outissue:edictally')
-    compile project(':outissue:tristate')
-    compile deps.external.rxjava
-    compile deps.external.rxrelay
-    compile deps.other.crittercism
-    compile deps.other.geo
-    compile deps.other.blockcanary
+    api project(':outissue:caricetum:concher')
+    api project(':fratry:matchy')
+    api project(':fratry:linotype')
+    api project(':outissue:edictally')
+    api project(':outissue:tristate')
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.other.crittercism
+    api deps.other.geo
+    api deps.other.blockcanary
 
-    testCompile deps.test.opentracing
-    testCompile deps.other.leanback
+    testImplementation deps.test.opentracing
+    testImplementation deps.other.leanback
 }

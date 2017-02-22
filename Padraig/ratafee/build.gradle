@@ -2,18 +2,18 @@ apply plugin: 'com.android.library'
 dependencies {
     annotationProcessor deps.apt.daggerCompiler
 
-    compile project (':Padraig:emerse')
-    compile project (':outissue:proctoral')
-    compile project (':outissue:tetragram')
-    compile project (':fratry:Ormond')
+    api project (':Padraig:emerse')
+    api project (':outissue:proctoral')
+    api project (':outissue:tetragram')
+    api project (':fratry:Ormond')
 
-    compile deps.support.annotations
-    compile deps.external.dagger
-    compile deps.external.timber
-    compile deps.other.exo
-    compile deps.other.autoValueGson
+    api deps.support.annotations
+    api deps.external.dagger
+    api deps.external.timber
+    api deps.other.exo
+    api deps.other.autoValueGson
 
-    provided deps.apt.javax
+    compileOnly deps.apt.javax
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

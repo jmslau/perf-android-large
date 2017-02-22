@@ -1,18 +1,18 @@
 apply plugin: 'com.android.application'
 dependencies {
-    debugCompile project(':Padraig:arbitrate')
-    releaseCompile project(':Padraig:cuminoin')
+    debugImplementation project(':Padraig:arbitrate')
+    releaseImplementation project(':Padraig:cuminoin')
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 
-    compile project(':outissue:oleometer')
+    api project(':outissue:oleometer')
 
     androidTestAnnotationProcessor deps.apt.daggerCompiler
 
-    androidTestCompile project(':outissue:embrace')
-    androidTestCompile project(':outissue:oleometer')
+    androidTestImplementation project(':outissue:embrace')
+    androidTestImplementation project(':outissue:oleometer')
 
-    androidTestCompile deps.test.dexmaker
-    androidTestCompile deps.test.uiautomator
-    androidTestCompile deps.test.screenshot
+    androidTestImplementation deps.test.dexmaker
+    androidTestImplementation deps.test.uiautomator
+    androidTestImplementation deps.test.screenshot
 }

@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 dependencies {
-    provided deps.support.annotations
+    compileOnly deps.support.annotations
 
-    compile deps.external.rxjava
-    compile deps.other.geo
-    compile project(':outissue:caricetum:midship')
+    api deps.external.rxjava
+    api deps.other.geo
+    api project(':outissue:caricetum:midship')
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

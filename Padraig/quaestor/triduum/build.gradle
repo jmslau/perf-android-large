@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:phasmatid')
-    compile deps.support.annotations
+    api project(':outissue:phasmatid')
+    api deps.support.annotations
 }

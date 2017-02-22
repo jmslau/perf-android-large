@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile project(':outissue:tetragram')
-    compile project(':outissue:extended')
-    compile project(':outissue:defusion')
-    compile project(':fratry:subradius')
-    compile deps.other.autovalue
-    provided deps.other.roasterJdt
-    compile deps.other.gson
-    compile deps.other.shuffle
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:defusion')
+    api project(':fratry:subradius')
+    api deps.other.autovalue
+    compileOnly deps.other.roasterJdt
+    api deps.other.gson
+    api deps.other.shuffle
 
-    testCompile project(':outissue:cyclus')
-    testCompile deps.other.leanback
+    testImplementation project(':outissue:cyclus')
+    testImplementation deps.other.leanback
 }

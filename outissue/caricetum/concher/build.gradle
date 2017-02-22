@@ -1,13 +1,13 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 dependencies {
-    compile deps.external.rxrelay
-    compile deps.external.rxjava
-    compile deps.other.geo
+    api deps.external.rxrelay
+    api deps.external.rxjava
+    api deps.other.geo
 
     compileOnly deps.support.annotations
     compileOnly deps.apt.androidApi
 
-    testCompile deps.other.leanback
-    testCompile deps.apt.androidApi
-    testCompile deps.support.annotations
+    testImplementation deps.other.leanback
+    testImplementation deps.apt.androidApi
+    testImplementation deps.support.annotations
 }

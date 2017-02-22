@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.support.annotations
-    compile deps.external.deviceYearClass
-    compile deps.other.utils
-    compile deps.external.rxandroid
+    api deps.support.annotations
+    api deps.external.deviceYearClass
+    api deps.other.utils
+    api deps.external.rxandroid
 
-    testCompile deps.other.leanback
-    testCompile project(':outissue:cyclus')
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:cyclus')
 }

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 dependencies {
-    compile deps.support.annotations
+    api deps.support.annotations
     annotationProcessor deps.other.recyclerview
-    compile deps.other.appcompat
+    api deps.other.appcompat
 
-    compile deps.external.gson
-    compile deps.other.googleMap
-    compile deps.other.rave
+    api deps.external.gson
+    api deps.other.googleMap
+    api deps.other.rave
 
-    testCompile project(':outissue:cyclus')
+    testImplementation project(':outissue:cyclus')
 }

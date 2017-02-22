@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.5.0-alpha-preview01'
+        classpath 'com.android.tools.build:gradle:2.5.0-alpha-preview-01'
         classpath ('com.uber:okbuck:0.16.3') {
           exclude module: 'gradle'
         }

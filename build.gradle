@@ -184,6 +184,7 @@ task addSources {
                 }
 
                 adjustPackage(it, "LoginActivity")
+                addReferencesToOtherClasses(it, "LoginActivity")
                 adjustPackage(it, "Thing")
                 if (hasAutoService) {
                     adjustPackage(it, "Service")
@@ -207,19 +208,38 @@ boolean hasDependency(Project project, String name) {
 }
 
 def adjustPackage(Project project, String className) {
-    def sourceFolder = new File(project.projectDir, 'src')
-    def manifest = new File(sourceFolder, "main/AndroidManifest.xml").text
-    def projectPackage = manifest.substring(manifest.indexOf('package="') + 9, manifest.indexOf('" xmlns:android'))
+    def projectPackage = getProjectPackage(project)
     adjustPackage(project, className, projectPackage)
 }
 
-def adjustPackage(Project project, String className, String projectPackage) {
-    def sourceFolder = new File(project.projectDir, 'src')
-    def sourceFile = new File(sourceFolder, "main/java/gradle/example/${className}.java")
+def getProjectPackage(Project project) {
+  if (project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')) {
+    "com.studio.${project.name}"
+  } else {
+    "gradle.example.${project.name}"
+  }
+}
 
-    def exampleClassFolder = new File(sourceFolder, "main/java/${projectPackage.replace('.', '/')}")
+def adjustPackage(Project project, String className, String projectPackage) {
+    def sourceFolder = new File(project.projectDir, 'src/main/java')
+    def sourceFile = new File(sourceFolder, "gradle/example/${className}.java")
+
+    def exampleClassFolder = new File(sourceFolder, "${projectPackage.replace('.', '/')}")
     exampleClassFolder.mkdirs()
 
     sourceFile.text = sourceFile.text.replaceAll("package gradle.example;", "package ${projectPackage};")
     sourceFile.renameTo(new File(exampleClassFolder, "${className}.java"))
+}
+
+def addReferencesToOtherClasses(Project project, String className) {
+    def sourceFolder = new File(project.projectDir, 'src/main/java')
+    def projectPackage = getProjectPackage(project)
+    def sourceFile = new File(sourceFolder, "${projectPackage.replace('.', '/')}/${className}.java")
+    def dependencyProjects = project.configurations.compile.allDependencies.withType(ProjectDependency).collect { it.dependencyProject}.toSet()
+    def fieldDeclarations = dependencyProjects.collect { "private ${getProjectPackage(it)}.Thing ${it.name}Thing;"}
+
+    sourceFile.text = sourceFile.text.replace("private View mLoginFormView;", """
+      private View mLoginFormView;
+      ${fieldDeclarations.join('\n')}
+    """)
 }

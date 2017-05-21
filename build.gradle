@@ -2,10 +2,11 @@ buildscript {
     repositories {
         mavenLocal()
         jcenter()
+        google()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.5.0-alpha-preview-01'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha1'
         classpath ('com.uber:okbuck:0.16.3') {
           exclude module: 'gradle'
         }
@@ -16,6 +17,7 @@ allprojects {
     project -> project.apply from: rootProject.file('dependencies.gradle')
     repositories {
         jcenter()
+        google()
     }
 
     def androidHome = System.getenv("ANDROID_HOME")
@@ -112,8 +114,8 @@ def addCommonConfigurationForAndroidModules(Project project) {
     project.android {
         compileSdkVersion config.build.compileSdkVersion
         buildToolsVersion config.build.buildToolsVersion
-
         defaultConfig {
+            javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = false
             minSdkVersion config.build.minSdkVersion
             targetSdkVersion config.build.targetSdkVersion
             vectorDrawables.useSupportLibrary = true

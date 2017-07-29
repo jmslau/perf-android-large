@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-alpha1'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha8'
         classpath ('com.uber:okbuck:0.16.3') {
           exclude module: 'gradle'
         }
@@ -20,7 +20,9 @@ allprojects {
         google()
     }
 
-    def androidHome = System.getenv("ANDROID_HOME")
+
+
+    /*def androidHome = System.getenv("ANDROID_HOME")
     if (!androidHome) {
         throw new IllegalArgumentException("ANDROID_HOME environment variable is not set.")
     }
@@ -31,7 +33,9 @@ allprojects {
         maven {
             url "$androidHome/extras/google/m2repository/"
         }
-    }
+    }*/
+
+
 }
 
 subprojects { project ->
@@ -49,7 +53,7 @@ subprojects { project ->
             exclude module: 'xpp3'
             exclude module: 'xmlpull'
 
-            if (it.name.contains("Test")) {
+            /*if (it.name.contains("Test")) {
                 resolutionStrategy {
                     force 'io.reactivex:rxandroid:1.2.1'
                     force 'com.squareup.okio:okio:1.8.0'
@@ -64,7 +68,7 @@ subprojects { project ->
             resolutionStrategy {
                 force 'com.google.guava:guava:19.0'
                 force 'com.google.auto:auto-common:0.6'
-            }
+            }*/
         }
 
         if (project.plugins.hasPlugin('java')) {

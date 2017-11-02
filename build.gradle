@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0-beta1'
+        classpath 'com.android.tools.build:gradle:2.3.0-dev'
         classpath ('com.uber:okbuck:0.13.0') {
           exclude module: 'gradle'
         }
@@ -19,6 +19,9 @@ allprojects {
     }
 
     def androidHome = System.getenv("ANDROID_HOME")
+    if (!androidHome) {
+        throw new IllegalArgumentException("ANDROID_HOME environment variable is not set.")
+    }
     repositories {
         maven {
             url "$androidHome/extras/android/m2repository/"
@@ -162,6 +165,7 @@ task addSources {
                 println "Adding sources to: " + sourceFolder
                 copy {
                     from fileTree(new File(project.rootDir, "gradle/SourceTemplate/app/src/")).exclude("main/AndroidManifest.xml")
+                    from fileTree(new File(project.rootDir, "gradle/SourceTemplate/java-lib/src/"))
                     into sourceFolder
                 }
 
@@ -173,9 +177,19 @@ task addSources {
                 }
 
                 adjustPackage(it, "LoginActivity")
+                adjustPackage(it, "Thing")
                 if (hasAutoService) {
                     adjustPackage(it, "Service")
                 }
+            }
+            if (it.plugins.hasPlugin('java')) {
+                def sourceFolder = new File(it.projectDir, 'src')
+                println "Adding sources to: " + sourceFolder
+                copy {
+                    from fileTree(new File(project.rootDir, "gradle/SourceTemplate/java-lib/src/"))
+                    into sourceFolder
+                }
+                adjustPackage(it, "Thing", "gradle.example.${it.name}")
             }
         }
     }
@@ -187,9 +201,14 @@ boolean hasDependency(Project project, String name) {
 
 def adjustPackage(Project project, String className) {
     def sourceFolder = new File(project.projectDir, 'src')
-    def sourceFile = new File(sourceFolder, "main/java/gradle/example/${className}.java")
     def manifest = new File(sourceFolder, "main/AndroidManifest.xml").text
     def projectPackage = manifest.substring(manifest.indexOf('package="') + 9, manifest.indexOf('" xmlns:android'))
+    adjustPackage(project, className, projectPackage)
+}
+
+def adjustPackage(Project project, String className, String projectPackage) {
+    def sourceFolder = new File(project.projectDir, 'src')
+    def sourceFile = new File(sourceFolder, "main/java/gradle/example/${className}.java")
 
     def exampleClassFolder = new File(sourceFolder, "main/java/${projectPackage.replace('.', '/')}")
     exampleClassFolder.mkdirs()

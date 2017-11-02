@@ -14,3 +14,4 @@ gradle-user-home
 **/src/
 !**/src/*/AndroidManifest.xml
 !gradle/SourceTemplate/app/src
+!gradle/SourceTemplate/java-lib/src

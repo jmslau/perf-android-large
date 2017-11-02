@@ -5,6 +5,10 @@ Also provides an alternative build path using [Buck](https://buckbuild.com/) to 
 
 [![Master branch build status](https://travis-ci.org/kageiit/android-studio-gradle-test.svg?branch=master)](https://travis-ci.org/kageiit/android-studio-gradle-test)
 
+## Setup
+
+Run `./gradlew addSources` to generate source code for all subprojects.
+
 ## To build all apps with gradle:
 ```bash
 ./buildWithGradle

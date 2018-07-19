@@ -2,10 +2,11 @@ buildscript {
     repositories {
         mavenLocal()
         jcenter()
+        google()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0-beta3'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha8'
         classpath ('com.uber:okbuck:0.16.3') {
           exclude module: 'gradle'
         }
@@ -16,9 +17,12 @@ allprojects {
     project -> project.apply from: rootProject.file('dependencies.gradle')
     repositories {
         jcenter()
+        google()
     }
 
-    def androidHome = System.getenv("ANDROID_HOME")
+
+
+    /*def androidHome = System.getenv("ANDROID_HOME")
     if (!androidHome) {
         throw new IllegalArgumentException("ANDROID_HOME environment variable is not set.")
     }
@@ -29,7 +33,9 @@ allprojects {
         maven {
             url "$androidHome/extras/google/m2repository/"
         }
-    }
+    }*/
+
+
 }
 
 subprojects { project ->
@@ -47,18 +53,22 @@ subprojects { project ->
             exclude module: 'xpp3'
             exclude module: 'xmlpull'
 
-            if (it.name.contains("Test")) {
+            /*if (it.name.contains("Test")) {
                 resolutionStrategy {
                     force 'io.reactivex:rxandroid:1.2.1'
-                    force 'com.android.support:appcompat-v7:24.2.1'
-                    force 'com.android.support:recyclerview-v7:24.2.1'
-                    force 'com.android.support:animated-vector-drawable:24.2.1'
-                    force 'com.android.support:support-v4:24.2.1'
+                    force 'com.squareup.okio:okio:1.8.0'
+                    force 'io.reactivex:rxjava:1.1.8'
+                    force 'com.google.auto:auto-common:0.6'
+                    force 'com.android.support:appcompat-v7:25.1.0'
+                    force 'com.android.support:recyclerview-v7:25.1.0'
+                    force 'com.android.support:animated-vector-drawable:25.1.0'
+                    force 'com.android.support:support-v4:25.1.0'
                 }
             }
             resolutionStrategy {
                 force 'com.google.guava:guava:19.0'
-            }
+                force 'com.google.auto:auto-common:0.6'
+            }*/
         }
 
         if (project.plugins.hasPlugin('java')) {
@@ -108,8 +118,8 @@ def addCommonConfigurationForAndroidModules(Project project) {
     project.android {
         compileSdkVersion config.build.compileSdkVersion
         buildToolsVersion config.build.buildToolsVersion
-
         defaultConfig {
+            javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = false
             minSdkVersion config.build.minSdkVersion
             targetSdkVersion config.build.targetSdkVersion
             vectorDrawables.useSupportLibrary = true
@@ -180,6 +190,7 @@ task addSources {
                 }
 
                 adjustPackage(it, "LoginActivity")
+                addReferencesToOtherClasses(it, "LoginActivity")
                 adjustPackage(it, "Thing")
                 if (hasAutoService) {
                     adjustPackage(it, "Service")
@@ -203,51 +214,38 @@ boolean hasDependency(Project project, String name) {
 }
 
 def adjustPackage(Project project, String className) {
-    def sourceFolder = new File(project.projectDir, 'src')
-    def manifest = new File(sourceFolder, "main/AndroidManifest.xml").text
-    def projectPackage = manifest.substring(manifest.indexOf('package="') + 9, manifest.indexOf('" xmlns:android'))
+    def projectPackage = getProjectPackage(project)
     adjustPackage(project, className, projectPackage)
 }
 
-def adjustPackage(Project project, String className, String projectPackage) {
-    def sourceFolder = new File(project.projectDir, 'src')
-    def sourceFile = new File(sourceFolder, "main/java/gradle/example/${className}.java")
+def getProjectPackage(Project project) {
+  if (project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')) {
+    "com.studio.${project.name}"
+  } else {
+    "gradle.example.${project.name}"
+  }
+}
 
-    def exampleClassFolder = new File(sourceFolder, "main/java/${projectPackage.replace('.', '/')}")
+def adjustPackage(Project project, String className, String projectPackage) {
+    def sourceFolder = new File(project.projectDir, 'src/main/java')
+    def sourceFile = new File(sourceFolder, "gradle/example/${className}.java")
+
+    def exampleClassFolder = new File(sourceFolder, "${projectPackage.replace('.', '/')}")
     exampleClassFolder.mkdirs()
 
     sourceFile.text = sourceFile.text.replaceAll("package gradle.example;", "package ${projectPackage};")
     sourceFile.renameTo(new File(exampleClassFolder, "${className}.java"))
 }
 
-// Prevents resolving any configurations during evaluation
-class ConfigurationNullifierListener implements DependencyResolutionListener {
+def addReferencesToOtherClasses(Project project, String className) {
+    def sourceFolder = new File(project.projectDir, 'src/main/java')
+    def projectPackage = getProjectPackage(project)
+    def sourceFile = new File(sourceFolder, "${projectPackage.replace('.', '/')}/${className}.java")
+    def dependencyProjects = project.configurations.compile.allDependencies.withType(ProjectDependency).collect { it.dependencyProject}.toSet()
+    def fieldDeclarations = dependencyProjects.collect { "private ${getProjectPackage(it)}.Thing ${it.name}Thing;"}
 
-    private final Project root
-
-    ConfigurationNullifierListener(Project root) {
-        this.root = root
-    }
-
-    void beforeResolve(ResolvableDependencies dependencies) {
-        String name = dependencies.name
-        String path = dependencies.path
-        String projectPath = path.substring(0, path.lastIndexOf(":"))
-        Project p = root.project(projectPath)
-        try {
-            Configuration config = p.configurations.getByName(name)
-            config.dependencies.clear()
-            config.extendsFrom = []
-        } catch(Exception ignored) { }
-    }
-
-    void afterResolve(ResolvableDependencies dependencies) { }
-}
-
-if (System.getProperty("okbuck.wrapper", "false") == "true") {
-    final ConfigurationNullifierListener configurationNullifierListener = new ConfigurationNullifierListener(project)
-    gradle.addListener(configurationNullifierListener)
-    gradle.projectsEvaluated {
-        gradle.removeListener(configurationNullifierListener)
-    }
+    sourceFile.text = sourceFile.text.replace("private View mLoginFormView;", """
+      private View mLoginFormView;
+      ${fieldDeclarations.join('\n')}
+    """)
 }

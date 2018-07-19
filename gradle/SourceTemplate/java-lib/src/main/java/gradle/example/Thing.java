@@ -1,4 +1,7 @@
 package gradle.example;
 
-class Thing {
+public class Thing {
+  public void foo() {
+    
+  }
 }

@@ -3,12 +3,12 @@ abiChange {
   buck {
     targets = ["//phthalic:bin_debug"]
   }
-  apply-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/LoginActivity.java"
+  apply-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/Thing.java"
 }
 
 abiChangeWithInstantRun {
   tasks = [":phthalic:assembleDebug"]
-  apply-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/LoginActivity.java"
+  apply-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/Thing.java"
   gradle-args = [
     "-Pandroid.injected.invoked.from.ide=true",
     "-Pandroid.injected.build.api=25",
@@ -25,12 +25,12 @@ nonAbiChange {
   buck {
     targets = ["//phthalic:bin_debug"]
   }
-  apply-non-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/LoginActivity.java"
+  apply-non-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/Thing.java"
 }
 
 nonAbiChangeWithInstantRun {
   tasks = [":phthalic:assembleDebug"]
-  apply-non-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/LoginActivity.java"
+  apply-non-abi-change-to = "outissue/carnally/src/main/java/com/studio/carnally/Thing.java"
   gradle-args = [
     "-Pandroid.injected.invoked.from.ide=true",
     "-Pandroid.injected.build.api=25",
